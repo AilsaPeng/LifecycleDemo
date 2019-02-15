@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE module PUBLIC
+    "-//Puppy Crawl//DTD Check Configuration 1.2//EN"
+    "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+<module name="Checker">
+    <property name="charset" value="UTF-8" />
+    <property name="severity" value="warning" />
+    <module name="TreeWalker">
+        <!-- 必须导入类的完整路径，即不能使用*导入所需的类 -->
+        <module name="AvoidStarImport" />
+        <!-- 检查是否从非法的包中导入了类 illegalPkgs: 定义非法的包名称-->
+        <module name="IllegalImport" />
+        <!-- 检查是否导入了不必显示导入的类-->
+        <module name="RedundantImport" />
+        <!-- 检查是否导入的包没有使用-->
+        <module name="UnusedImports" />
+        <!-- 圈复杂度 -->
+        <module name="CyclomaticComplexity">
+            <property name="max" value="15" />
+        </module>
+        <module name="SuppressWarningsHolder" />
+    </module>
+    <!--可通过@SuppressWarnings注解忽略掉checkstyle检查-->
+    <module name="SuppressWarningsFilter" />
+</module>
